@@ -1,0 +1,37 @@
+/* General */
+body{
+    background-color: #1C3D54;
+}
+
+body,.wrapper,#root{
+    width: 100%;
+    height: 90vh;
+}
+
+/* Header */
+.navbar{
+    background-color: #171A21 !important;
+}
+
+/* Search an Anime */
+.search-anime{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-anime input, .search-anime input:focus{
+    background-color: #171A21;
+    border: 1px solid rgb(78, 78, 78);
+    color: white;
+}
+
+.search-anime label{
+    color: rgba(255,255,255,0.5);
+    font-size: 50px !important;
+}
+
+/*  */
+
