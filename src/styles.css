@@ -55,6 +55,7 @@ body,.wrapper,#root{
 .top-anime-list .card-body{
     background-color:#171A21;
     color: white;
+    transition: all 0.15s ease-in-out;
 }
 
 .top-anime-list .rank{
@@ -67,6 +68,11 @@ body,.wrapper,#root{
     background-color: #171A21;
     color: white;
     font-weight: bold;
+    transition: all 0.15s ease-in-out;
+}
+
+.top-anime-list a:hover .card-body,.top-anime-list a:hover .rank{
+    background-color: rgb(66, 66, 66);
 }
 
 /* Anime info */
