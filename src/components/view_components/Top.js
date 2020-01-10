@@ -16,10 +16,10 @@ const Top = props => {
   return (
     <div className="col-12">
       <div className="row top-anime-list">
-        {console.log(topList)}
+        {/* {console.log(topList)} */}
         {topList.map(anime =>{
           return (
-            <AnimeCard anime={anime} />
+            <AnimeCard key={anime.mal_id} anime={anime} />
           )
         })}
       </div>

@@ -68,3 +68,34 @@ body,.wrapper,#root{
     color: white;
     font-weight: bold;
 }
+
+/* Anime info */
+
+.anime-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info{
+    width: 85%;
+}
+
+.info-card{
+    display: flex;
+}
+
+.info-card .info-left{
+    width: 20%;
+}
+
+.info-card .info-right{
+    width: 80%;
+}
+
+.info .separator{
+    width: 100%;
+    height: 10px;
+    background-color: lightgray;
+    margin: 20px 0 0 0;
+}

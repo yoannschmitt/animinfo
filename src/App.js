@@ -7,6 +7,7 @@ import './styles.css';
 import Header from './components/Header.js'
 import TopView from './components/views/TopView.js'
 import SearchAnimeView from './components/views/SearchAnimeView.js'
+import AnimeInfo from './components/views/AnimeInfo.js'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={SearchAnimeView} />
         <Route exact path="/top" component={TopView} />
+        <Route exact path="/anime/:id" component={AnimeInfo} />
       </Switch>
     </div>
   );
