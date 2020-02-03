@@ -42,7 +42,8 @@ const AnimeInfo = props => {
         headers: {
             'Access-Control-Allow-Origin': '*',
         },
-          "mal_id": id
+          "mal_id": id,
+          "name": anime.title
         })
         .then(function (response) {
           console.log(response);
