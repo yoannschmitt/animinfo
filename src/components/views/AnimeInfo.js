@@ -37,6 +37,18 @@ const AnimeInfo = props => {
 		}
     }, [id]);
 
+    const AddToFavorites = (event) => {
+        axios.post('/add', {
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+        },
+          "mal_id": id
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+    }
+
 
   return (
     <div className="anime-info p-3">
@@ -53,6 +65,7 @@ const AnimeInfo = props => {
                     <p><b>Nombre d'épisodes : </b>{anime.episodes }</p>
                     <p><b>Première diffusion : </b>{anime.premiered }</p>
                     <p><b>Note : </b>{anime.score }/10</p>
+                    <button className="btn btn-success" onClick={AddToFavorites}>Ajouter aux favoris</button>
                 </div>
             </div>
 
