@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Header = (props) => {
   return (
     <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        <Navbar.Brand href="#home">AnimInfo</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />  
         <Nav className="mr-auto">
             <Nav.Link as={Link} to="/">Accueil</Nav.Link>
