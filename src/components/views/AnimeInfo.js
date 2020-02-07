@@ -46,6 +46,11 @@ const AnimeInfo = props => {
           "name": anime.title
         })
         .then(function (response) {
+            if(response.status == 200){
+                document.getElementById('favorite-feedback').innerHTML = 'Le favori a été ajouté';
+                document.getElementById('favorite-feedback').classList.add('text-success');
+                document.getElementById('favorite-button').remove();
+            }
           console.log(response);
         })
     }
@@ -66,7 +71,8 @@ const AnimeInfo = props => {
                     <p><b>Nombre d'épisodes : </b>{anime.episodes }</p>
                     <p><b>Première diffusion : </b>{anime.premiered }</p>
                     <p><b>Note : </b>{anime.score }/10</p>
-                    <button className="btn btn-success" onClick={AddToFavorites}>Ajouter aux favoris</button>
+                    <button className="btn btn-success" onClick={AddToFavorites} id="favorite-button">Ajouter aux favoris</button>
+                    <span id="favorite-feedback"></span>
                 </div>
             </div>
 
