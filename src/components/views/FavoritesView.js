@@ -23,7 +23,7 @@ const Top = props => {
         "mal_id": id,
     })
     .then(function (response) {
-        if(response.status == 200){
+        if(response.status === 200){
             document.getElementById(id).remove();
         }
     })

@@ -46,12 +46,12 @@ const AnimeInfo = props => {
           "name": anime.title
         })
         .then(function (response) {
-            if(response.status == 200){
+            if(response.status === 200){
                 document.getElementById('favorite-feedback').innerHTML = 'Le favori a été ajouté';
                 document.getElementById('favorite-feedback').classList.add('text-success');
                 document.getElementById('favorite-button').remove();
             }
-        //   console.log(response);
+        //   console.log(response);*
         })
     }
 
@@ -61,7 +61,7 @@ const AnimeInfo = props => {
         <div className="info bg-light rounded">
             <div className="info-card">
                 <div className="info-left">
-                    <img className="card-img" variant="top" src={anime.image_url} />
+                    <img className="card-img" variant="top" src={anime.image_url} alt="Couverture de l'animé" />
                 </div>
                 <div className="info-right p-3">
                     <h1>{anime.title}</h1>
