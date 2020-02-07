@@ -54,6 +54,7 @@ body,.wrapper,#root{
 
 .top-anime-list .card-body{
     background-color:#171A21;
+    border-top: 1px solid white;
     color: white;
     transition: all 0.15s ease-in-out;
 }
@@ -68,11 +69,15 @@ body,.wrapper,#root{
     background-color: #171A21;
     color: white;
     font-weight: bold;
+}
+
+.top-anime-list a{
     transition: all 0.15s ease-in-out;
 }
 
-.top-anime-list a:hover .card-body,.top-anime-list a:hover .rank{
-    background-color: rgb(66, 66, 66);
+.top-anime-list a:hover .card-body,.top-anime-list a:hover{
+    /* background-color: rgb(66, 66, 66); */
+    filter: sepia(1);
 }
 
 /* Anime info */
@@ -104,4 +109,10 @@ body,.wrapper,#root{
     height: 10px;
     background-color: lightgray;
     margin: 20px 0 0 0;
+}
+
+/* Global */
+
+*{
+    text-decoration: none !important;
 }

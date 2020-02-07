@@ -35,7 +35,7 @@ const Top = props => {
         {favorites.map(anime =>{
           return (
             <Link key={anime.mal_id} to={`/anime/${anime.mal_id}`} id={anime.mal_id}>
-                <ListGroup.Item key={anime.mal_id} className="d-flex justify-content-between align-items-center">
+                <ListGroup.Item key={anime.mal_id} className="d-flex justify-content-between align-items-center m-1">
                     <p className="mb-0">{anime.name}</p>
                     <button type="submit" className="btn btn-danger" onClick={(e) => handleDeleteFavorite(e,anime.mal_id)}>Supprimer</button>
                 </ListGroup.Item>
