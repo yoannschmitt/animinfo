@@ -22,11 +22,12 @@ const AnimeInfo = props => {
                 if (result.data)
                     // console.log(result.data)
                     setAnime(result.data);
-				// else
+                // else
 					// navigate('/404');
 			} catch (err) {
-				if (axios.isCancel(err))
-					source.cancel();
+                if (axios.isCancel(err))
+                    source.cancel();
+                    
 				// navigate('/404');    
 			}
 		}
@@ -56,51 +57,60 @@ const AnimeInfo = props => {
     }
 
 
-  return (
-    <div className="anime-info p-3">
-        <div className="info bg-light rounded">
-            <div className="info-card">
-                <div className="info-left">
-                    <img className="card-img" variant="top" src={anime.image_url} alt="Couverture de l'animé" />
-                </div>
-                <div className="info-right p-3">
-                    <h1>{anime.title}</h1>
-                    <p><b>Titre original : </b>{anime.title_japanese }</p>
-                    <p><b>Origine : </b>{anime.source }</p>
-                    <p><b>Format : </b>{anime.type }</p>
-                    <p><b>Nombre d'épisodes : </b>{anime.episodes }</p>
-                    <p><b>Première diffusion : </b>{anime.premiered }</p>
-                    <p><b>Note : </b>{anime.score }/10</p>
-                    <button className="btn btn-success" onClick={AddToFavorites} id="favorite-button">Ajouter aux favoris</button>
-                    <span id="favorite-feedback"></span>
-                </div>
-            </div>
-
-            <div className="separator"></div>
-
-            <div className="synopsis p-3">
-                <h2>Synopsis</h2>
-                <p>{anime.synopsis}</p>
-            </div>
-
-            <div className="separator"></div>   
-
-            <div className="openings p-3">
-                <h2>Openings</h2>
-                <ListGroup>
-                {anime.opening_themes ?
-                    anime.opening_themes.map((value, index) => {
-                        return <ListGroup.Item key={index}>{value}</ListGroup.Item>
-                    })
-                    :null
-                }
-                </ListGroup>
-            </div>
-
-            <div className="separator"></div>   
+    if(anime){
+        return (
+          <div className="anime-info p-3">
+              <div className="info bg-light rounded">
+                  <div className="info-card">
+                      <div className="info-left">
+                          <img className="card-img" variant="top" src={anime.image_url} alt="Couverture de l'animé" />
+                      </div>
+                      <div className="info-right p-3">
+                          <h1>{anime.title}</h1>
+                          <p><b>Titre original : </b>{anime.title_japanese }</p>
+                          <p><b>Origine : </b>{anime.source }</p>
+                          <p><b>Format : </b>{anime.type }</p>
+                          <p><b>Nombre d'épisodes : </b>{anime.episodes }</p>
+                          <p><b>Première diffusion : </b>{anime.premiered }</p>
+                          <p><b>Note : </b>{anime.score }/10</p>
+                          <button className="btn btn-success" onClick={AddToFavorites} id="favorite-button">Ajouter aux favoris</button>
+                          <span id="favorite-feedback"></span>
+                      </div>
+                  </div>
+      
+                  <div className="separator"></div>
+      
+                  <div className="synopsis p-3">
+                      <h2>Synopsis</h2>
+                      <p>{anime.synopsis}</p>
+                  </div>
+      
+                  <div className="separator"></div>   
+      
+                  <div className="openings p-3">
+                      <h2>Openings</h2>
+                      <ListGroup>
+                      {anime.opening_themes ?
+                          anime.opening_themes.map((value, index) => {
+                              return <ListGroup.Item key={index}>{value}</ListGroup.Item>
+                          })
+                          :null
+                      }
+                      </ListGroup>
+                  </div>
+      
+                  <div className="separator"></div>   
+              </div>
+          </div> 
+        );
+    }
+    else{
+        return(
+        <div className="d-flex align-items-center justify-content-center h-100">
+            <h1 className="not-found-message">Erreur 404 - Animé introuvable</h1>
         </div>
-    </div> 
-  );
+        );
+    }
 };
 
 export default AnimeInfo;

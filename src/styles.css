@@ -116,3 +116,7 @@ body,.wrapper,#root{
 *{
     text-decoration: none !important;
 }
+
+.not-found-message{
+    color: rgba(255,255,255,0.5);
+}
