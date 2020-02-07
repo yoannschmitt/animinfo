@@ -25,16 +25,16 @@ const SearchAnime = (props) => {
 				let res = await axios.get(`https://api.jikan.moe/v3/search/anime?q=${name}*`,
 					{ cancelToken:source.token });
 				if (res.data){
-          console.log(res.data)
+          // console.log(res.data)
           setSearchedAnimes(res.data.results);
 				}
 				else
-          console.log('/404');
+          console.log('Erreur 404');
 			} 
 			catch (err) {
 				if (axios.isCancel(err))
 					source.cancel();
-				console.log('/404');
+				// console.log('/404');
 			}
 		}
 

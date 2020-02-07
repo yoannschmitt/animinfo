@@ -20,7 +20,7 @@ const AnimeInfo = props => {
 				let result = await axios.get(`https://api.jikan.moe/v3/anime/${id}`,
 					{ cancelToken:source.token });
                 if (result.data)
-                    console.log(result.data)
+                    // console.log(result.data)
                     setAnime(result.data);
 				// else
 					// navigate('/404');
@@ -51,7 +51,7 @@ const AnimeInfo = props => {
                 document.getElementById('favorite-feedback').classList.add('text-success');
                 document.getElementById('favorite-button').remove();
             }
-          console.log(response);
+        //   console.log(response);
         })
     }
 
